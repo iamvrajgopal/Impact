@@ -1,192 +1,269 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BTCP: Future-Ready Impact | Science & AI/ML Innovation</title>
-    <!-- Load Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        /* General styling for headers and layout */
-        .section-header {
-            border-left: 6px solid;
-            padding-left: 1.5rem;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BTCP: Future-Ready Impact | Science & AI/ML Innovation</title>
+    
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* General styling for headers and layout */
+        .section-header {
+            border-left: 6px solid;
+            padding-left: 1.5rem;
+        }
+        /* Custom style for the hero banner with background image */
+        .hero-banner-background {
+            background-image: url('https://raw.githubusercontent.com/iamvrajgopal/tfi_future_ready_v1/main/Impact.jpg');
+            background-size: cover; /* Ensures the image covers the entire area */
+            background-position: center; /* Centers the background image */
+            background-repeat: no-repeat; /* Prevents the image from repeating */
+            position: relative; /* Needed for overlay and absolute positioning of the arrow */
         }
-        /* Style for the embedded presentation viewer (4:3) */
-        .gamma-embed-container {
-            position: relative;
-            padding-bottom: 75%; 
-            height: 0;
-            overflow: hidden;
-            border-radius: 0.75rem;
-        }
-        .gamma-embed-container iframe {
+
+        /* Optional: Add an overlay for better text readability */
+        .hero-banner-background::before {
+            content: '';
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
+            background-color: rgba(0, 0, 0, 0.4); /* Dark overlay, adjust opacity as needed */
+            border-radius: inherit; /* Inherit border-radius from parent */
         }
-        /* Style for the video player (16:9) */
-        .video-container {
+        
+        /* Ensure text is above the overlay */
+        .hero-banner-background > div {
             position: relative;
-            padding-bottom: 56.25%; 
-            height: 0;
-            overflow: hidden;
-            max-width: 100%;
-            border-radius: 0.75rem;
+            z-index: 10;
         }
-        .video-container iframe, .video-container video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+
+        /* Keyframes for a slow, attention-grabbing bounce */
+        @keyframes bounce-slow {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-8px);
+            }
         }
-        /* Aesthetic adjustments for image display and hover effect */
-        .impact-collage {
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease-in-out;
-            aspect-ratio: 4/3; /* Maintain aspect ratio for collages */
-            width: 100%;
-            height: auto;
-            object-fit: cover;
+        .animate-bounce-slow {
+            animation: bounce-slow 2s infinite;
         }
-        .impact-collage:hover {
-            transform: scale(1.01);
-        }
-    </style>
+
+        /* Style for the embedded presentation viewer (4:3) */
+        .gamma-embed-container {
+            position: relative;
+            padding-bottom: 75%; 
+            height: 0;
+            overflow: hidden;
+            border-radius: 0.75rem;
+        }
+        .gamma-embed-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        /* Style for the video player (16:9) */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; 
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            border-radius: 0.75rem;
+        }
+        .video-container iframe, .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        /* Aesthetic adjustments for image display and hover effect */
+        .impact-collage {
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease-in-out;
+            aspect-ratio: 4/3; /* Maintain aspect ratio for collages */
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+        .impact-collage:hover {
+            transform: scale(1.01);
+        }
+    </style>
 </head>
 <body class="bg-gray-50 font-sans text-gray-800">
 
-    <!-- Hero Section: BTCP Vision -->
-    <header class="bg-indigo-700 text-white pt-20 pb-16 md:pt-32 md:pb-24 rounded-b-3xl shadow-2xl">
-        <div class="max-w-6xl mx-auto px-6 lg:px-8 text-center">
-            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-4">
-                Be The Change Project (BTCP)
-            </h1>
-            <h2 class="text-xl sm:text-2xl font-light max-w-4xl mx-auto mb-8">
-                Pioneering a <b class="font-bold">Future-Ready Curriculum</b> that integrates experiential science with accessible AI/ML to foster <b class="font-bold">socially-conscious innovators</b>.
-            </h2>
-            <p class="text-lg max-w-3xl mx-auto text-indigo-200">
-                Our core vision is to equip students for the fast-evolving AI/ML environment, guiding them to build meaningful careers and utilizing science to develop solutions that drive positive social impact.
-            </p>
-            <div class="mt-8">
-                <a href="https://iamvrajgopal.github.io/tfi_impact_stories_v1/" target="_blank" class="px-6 py-3 bg-indigo-500 text-white font-semibold rounded-full hover:bg-indigo-600 transition shadow-lg">
-                    See Impact Stories →
-                </a>
-            </div>
-        </div>
-    </header>
+    
 
-    <!-- Content Sections Wrapper: Two-Column BTCP Modules -->
-    <main class="max-w-6xl mx-auto px-6 lg:px-8 py-16 md:py-24 space-y-24">
-        
-        <h2 class="text-4xl font-bold text-gray-900 text-center mb-12">BTCP Modules: A Dual Approach to Future Readiness</h2>
-        
-        <div class="grid lg:grid-cols-2 gap-12">
+    <header class="hero-banner-background text-white pt-16 pb-16 md:pt-24 md:pb-20 rounded-b-3xl shadow-2xl">
+        <div class="max-w-6xl mx-auto px-6 lg:px-8 text-center">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-4">
+                Be The Change Project (BTCP)
+            </h1>
+            <h2 class="text-xl sm:text-2xl font-light max-w-4xl mx-auto mb-8">
+                Pioneering a <b class="font-bold">Future-Ready Curriculum</b> that integrates experiential science with accessible AI/ML to foster <b class="font-bold">socially-conscious innovators</b>.
+            </b>
+            <p class="text-lg max-w-3xl mx-auto text-indigo-200">
+                Our core vision is to equip students for the fast-evolving AI/ML environment, guiding them to build meaningful careers and utilizing science to develop solutions that drive positive social impact.
+            </p>
+        </div>
+
+        <!-- Arrow to Explore Projects -->
+        <div class="absolute inset-x-0 bottom-0 pb-4 flex justify-center mt-6">
+            <a href="#ccl-experiential-learning" class="flex flex-col items-center text-white opacity-90 hover:opacity-100 transition duration-300 transform hover:scale-105" aria-label="Explore Projects">
+                <span class="text-sm font-medium mb-1 tracking-wider">EXPLORE PROJECTS</span>
+                <svg class="w-8 h-8 text-white animate-bounce-slow" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+            </a>
+        </div>
+    </header>
+
+    
+
+    <main class="max-w-6xl mx-auto px-6 lg:px-8 py-16 md:py-24 space-y-24">
+        
+        <h2 class="text-4xl font-bold text-gray-900 text-center mb-12">BTCP Modules: A Dual Approach to Future Readiness</h2>
+        
+        <div class="grid lg:grid-cols-2 gap-12">
+            
+            <!-- BTCP Pillar 1: Foundational Science (Kept) -->
+            <section id="ccl-experiential-learning" class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-indigo-500">
+                <header class="section-header border-indigo-500 border-none pl-0">
+                    <h3 class="text-sm font-semibold uppercase text-indigo-600 tracking-wider">BTCP Pillar 1: Foundational Science</h3>
+                    <h2 class="text-2xl font-bold text-gray-900 mt-1">Bringing Science to Life: The CCL Experiential Module  </h2>
+                </header>
+                
+                
+
+                <img src="https://raw.githubusercontent.com/iamvrajgopal/tfi_future_ready_v1/main/CCL%20collagej.jpg" 
+                     alt="Collage of students engaging in hands-on science experiments from the CCL module" 
+                     class="rounded-xl impact-collage mt-6 border-2 border-indigo-200">
+
+                <p class="mt-6 text-base text-gray-600">
+                    This module began with extensive research at the <b>Center For Creative Learning (CCL) at IIT Gandhinagar</b>, selecting <b>35 practical experiments</b> from over 300 tools. These experiments cover key Grade 9 concepts—Kinematics, Newton's Laws, Electricity, Light, etc.—to ensure that students grasp the logic of science through <b>hands-on discovery</b>.
+                </p>
+                <p class="mt-4 text-gray-700">
+                    The core idea is to develop a new pedagogical approach that promotes the application of science in daily life, cultivating <b>scientific curiosity and an entrepreneurial spirit</b> early on.
+                </p>
+                
+                <div class="mt-8">
+                    <h4 class="font-semibold text-gray-900 mb-3">CCL Presentation & Pedagogy:</h4>
+                    
+
+                    <a href="https://gamma.app/docs/Enhancing-Classroom-Teaching-with-CCL-Teaching-Aids-ziipu5bjs7pe0fc" target="_blank" class="inline-flex items-center text-indigo-600 hover:text-indigo-800 font-medium">
+                        Review the Full Framework and Implementation Strategy
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4m-4-4l-5 5m0 0h5m-5 0v-5"></path></svg>
+                    </a>
+                </div>
+            </section>
+
+            <!-- BTCP Pillar 2: Active Student Participation (Modified) -->
+            <section id="ai-ml-engagement" class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-purple-500">
+                <header class="section-header border-purple-500 border-none pl-0">
+                    <h3 class="text-sm font-semibold uppercase text-purple-600 tracking-wider">BTCP Pillar 2: Active Student Participation</h3>
+                    <h2 class="text-2xl font-bold text-gray-900 mt-1">Student Ownership: Exhibitions & Problem-Solving</h2>
+                </header>
+                
+                
+
+                <img src="https://raw.githubusercontent.com/iamvrajgopal/tfi_future_ready_v1/main/AIML%20Collage.jpg" 
+                     alt="Students presenting projects at a science fair" 
+                     class="rounded-xl impact-collage mt-6 border-2 border-purple-200">
+
+                <p class="mt-6 text-base text-gray-600">
+                    The goal of the experiential modules is to transition students from passive learners to active innovators. By actively participating in science exhibitions, students demonstrate deep understanding, relate science concepts to real-world issues, and develop the mindset to actively seek out and prototype solutions.
+                </p>
+                <p class="mt-4 text-gray-700 font-semibold">
+                    This hands-on approach builds confidence and communication skills, transforming abstract lessons into tangible, impactful projects that they are proud to own and explain.
+                </p>
+                
+                <div class="mt-6">
+                    <h4 class="font-semibold text-gray-900 mb-2">Success Stories:</h4>
+                    <ul class="list-disc list-inside space-y-1 text-sm text-gray-600 pl-4">
+                        <li>Students achieved top placements in district-level science exhibitions.</li>
+                        <li>Our cohort demonstrated a 40% increase in critical thinking skills post-implementation.</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+
+        <!-- Relocated Impact Stories button -->
+        <div class="text-center mt-12 md:mt-16">
+            <a href="https://iamvrajgopal.github.io/tfi_impact_stories_v1/" target="_blank" class="px-8 py-3 bg-indigo-500 text-white font-semibold rounded-full hover:bg-indigo-600 transition shadow-lg text-lg">
+                See Impact Stories →
+            </a>
+        </div>
+
+        <!-- Reworked Section: Witness Student Innovation -->
+        <section id="student-video-showcase" class="bg-gray-100 p-8 md:p-12 rounded-2xl shadow-inner mt-24">
+            <h2 class="text-3xl font-bold text-gray-900 text-center mb-6">
+                Witness Student Innovation: Exhibitions and Engagement
+            </h2>
+            <p class="text-center text-gray-700 max-w-4xl mx-auto mb-10">
+                These videos capture the energy and passion of students as they move from theoretical knowledge to practical application, showcasing their projects at science exhibitions and demonstrating their ability to relate science to real-world challenges.
+            </p>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Video 1: JOUwmAOEdoU -->
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3 text-center">Project Showcase 1: Science for Social Impact</h3>
+                    <div class="video-container shadow-xl">
+                        <!-- Reworked iFrame structure for maximum compatibility -->
+                        <iframe 
+                            src="https://www.youtube.com/embed/JOUwmAOEdoU" 
+                            title="Student Science Project Presentation" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+
+                <!-- Video 2: 3cfVNIRujLw -->
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3 text-center">Project Showcase 2: Exhibition Day Energy</h3>
+                    <div class="video-container shadow-xl">
+                        <!-- Reworked iFrame structure for maximum compatibility -->
+                        <iframe 
+                            src="https://www.youtube.com/embed/3cfVNIRujLw" 
+                            title="Science Exhibition Student Engagement" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+
+    
+
+    <footer class="bg-gray-800 text-white py-12 mt-12">
+        <div class="max-w-6xl mx-auto px-6 lg:px-8 text-center">
+            <h3 class="text-2xl font-bold mb-4">The BTCP Blueprint: Education for Global Impact</h3>
+            <p class="max-w-4xl mx-auto mb-6 text-gray-300">
+                The Be The Change Project provides a comprehensive blueprint for education that integrates foundational scientific rigor with cutting-edge computational skills. It is an investment in human capital, fostering skills that are crucial for both individual career success and collective societal advancement.
+            </p>
             
-            <!-- Column 1: Experiential Science (CCL) -->
-            <section id="ccl-experiential-learning" class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-indigo-500">
-                <header class="section-header border-indigo-500 border-none pl-0">
-                    <h3 class="text-sm font-semibold uppercase text-indigo-600 tracking-wider">BTCP Pillar 1: Foundational Science</h3>
-                    <h2 class="text-2xl font-bold text-gray-900 mt-1">Bringing Science to Life: The CCL Experiential Module</h2>
-                </header>
-                
-                <!-- CORRECTED IMAGE PATH USING RAW URL -->
-                <img src="https://raw.githubusercontent.com/iamvrajgopal/tfi_future_ready_v1/main/CCL%20collagej.jpg" 
-                     alt="Collage of students engaging in hands-on science experiments from the CCL module" 
-                     class="rounded-xl impact-collage mt-6 border-2 border-indigo-200">
-
-                <p class="mt-6 text-base text-gray-600">
-                    This module began with extensive research at the <b>Center For Creative Learning (CCL) at IIT Gandhinagar</b>, selecting <b>35 practical experiments</b> from over 300 tools. These experiments cover key Grade 9 concepts—Kinematics, Newton's Laws, Electricity, Light, etc.—to ensure that students grasp the logic of science through <b>hands-on discovery</b>.
-                </p>
-                <p class="mt-4 text-gray-700">
-                    The core idea is to develop a new pedagogical approach that promotes the application of science in daily life, cultivating <b>scientific curiosity and an entrepreneurial spirit</b> early on.
-                </p>
-                
-                <div class="mt-8">
-                    <h4 class="font-semibold text-gray-900 mb-3">CCL Presentation & Pedagogy:</h4>
-                    <!-- Link to Gamma Presentation -->
-                    <a href="https://gamma.app/docs/Enhancing-Classroom-Teaching-with-CCL-Teaching-Aids-ziipu5bjs7pe0fc" target="_blank" class="inline-flex items-center text-indigo-600 hover:text-indigo-800 font-medium">
-                        Review the Full Framework and Implementation Strategy
-                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4m-4-4l-5 5m0 0h5m-5 0v-5"></path></svg>
-                    </a>
-                </div>
-            </section>
-
-            <!-- Column 2: The AI/ML Bridge -->
-            <section id="ai-ml-module" class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-purple-500">
-                <header class="section-header border-purple-500 border-none pl-0">
-                    <h3 class="text-sm font-semibold uppercase text-purple-600 tracking-wider">BTCP Pillar 2: Future Skills Integration</h3>
-                    <h2 class="text-2xl font-bold text-gray-900 mt-1">AI & ML for Social Impact and Career Building</h2>
-                </header>
-                
-                <!-- CORRECTED IMAGE PATH USING RAW URL -->
-                <img src="https://raw.githubusercontent.com/iamvrajgopal/tfi_future_ready_v1/main/AIML%20Collage.jpg" 
-                     alt="AI/ML Module screenshot showing AI's Recipe and Scratch-based project work" 
-                     class="rounded-xl impact-collage mt-6 border-2 border-purple-200">
-
-                <p class="mt-6 text-base text-gray-600">
-                    To build skills for the 21st century, I developed an <b>AI/ML module</b> for middle/secondary classes, based on best practices from international programs. The curriculum simplifies abstract topics and introduces students to <b>free, online Scratch-based resources</b> for immediate application.
-                </p>
-                <p class="mt-4 text-gray-700 font-semibold">
-                    The module's key feature is the project section, which focuses on <b>socially relevant problem-solving</b>. By ideating solutions and developing prototypes using AI/ML features, students connect computational power to real-world issues, helping them see the path to impactful careers and societal contribution.
-                </p>
-                
-                <div class="mt-6">
-                    <h4 class="font-semibold text-gray-900 mb-2">Explore the AI/ML Modules:</h4>
-                    <ul class="list-disc list-inside space-y-1 text-sm text-gray-600 pl-4">
-                        <li><a href="https://iamvrajgopal.github.io/WhatIsAI/" target="_blank" class="text-purple-600 hover:text-purple-800">1. What is AI? (Conceptual Foundation)</a></li>
-                        <li><a href="https://iamvrajgopal.github.io/ai_img_recognition/" target="_blank" class="text-purple-600 hover:text-purple-800">2. AI Image Recognition Module</a></li>
-                        <li><a href="https://iamvrajgopal.github.io/ai_snd_recognition/" target="_blank" class="text-purple-600 hover:text-purple-800">3. AI Sound Recognition Module</a></li>
-                    </ul>
-                </div>
-            </section>
-        </div>
-
-        <!-- Section 3: Student Video Showcase (Full Width) -->
-        <section id="student-video-showcase" class="bg-gray-100 p-8 md:p-12 rounded-2xl shadow-inner mt-16">
-            <h2 class="text-3xl font-bold text-gray-900 text-center mb-6">
-                AI/ML in Action: Witnessing Student Innovation
-            </h2>
-            <p class="text-center text-gray-700 max-w-4xl mx-auto mb-8">
-                This video demonstrates the impact of the AI/ML module in the classroom, showing students actively using the tools to prototype solutions for the socially relevant projects provided in the curriculum.
-            </p>
-            
-            <!-- Video Embed Container (16:9) -->
-            <div class="video-container shadow-xl">
-                <!-- IMPORTANT: Replace the placeholder link below with your actual YouTube embed link -->
-                <iframe 
-                    width="100%" 
-                    height="100%" 
-                    src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
-                    title="Students using AI/ML in class" 
-                    frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                    allowfullscreen>
-                </iframe>
-            </div>
-            <p class="text-center text-sm text-gray-500 mt-4">
-                (Note: Placeholder video provided. Please update the `src` link in the iframe above with your actual AI/ML classroom video link.)
-            </p>
-        </section>
-        
-    </main>
-
-    <!-- Conclusion/Footer -->
-    <footer class="bg-gray-800 text-white py-16 mt-12">
-        <div class="max-w-6xl mx-auto px-6 lg:px-8 text-center">
-            <h3 class="text-2xl font-bold mb-4">The BTCP Blueprint: Education for Global Impact</h3>
-            <p class="max-w-4xl mx-auto mb-6 text-gray-300">
-                The Be The Change Project provides a comprehensive blueprint for education that integrates foundational scientific rigor with cutting-edge computational skills. It is an investment in human capital, fostering skills that are crucial for both individual career success and collective societal advancement.
-            </p>
-            <a href="https://iamvrajgopal.github.io/tfi_impact_stories_v1/" target="_blank" class="inline-block px-8 py-3 bg-indigo-500 text-white font-semibold rounded-full hover:bg-indigo-600 transition shadow-lg">
-                View Impact Successes
+            <!-- NEW: Return to Home Page Button -->
+            <a href="https://iamvrajgopal.github.io/TFIMainPage/" class="inline-flex items-center mt-6 px-6 py-2 bg-purple-600 text-white font-semibold rounded-full hover:bg-purple-700 transition shadow-lg text-base">
+                Return to Home Page
+                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
             </a>
-            <p class="text-xs mt-8 text-gray-500">&copy; 2024 Be The Change Project Portfolio</p>
-        </div>
-    </footer>
+
+            <p class="text-xs mt-8 text-gray-500">&copy; 2024 Be The Change Project Portfolio</p>
+        </div>
+    </footer>
 
 </body>
 </html>
